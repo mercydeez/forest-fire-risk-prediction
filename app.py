@@ -2,7 +2,6 @@ from flask import Flask, render_template, request
 import pickle
 
 app = Flask(__name__)
-
 # Load the model
 model = pickle.load(open('model.pkl', 'rb'))
 
