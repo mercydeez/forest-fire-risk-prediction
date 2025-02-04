@@ -7,7 +7,7 @@
     <style>
         body {
             font-family: Arial, sans-serif;
-            background-image: url('/static/forest-background.jpg'); /* Default background */
+            background-image: url('{{ background_image }}');
             background-size: cover;
             background-attachment: fixed;
             margin: 0;
@@ -60,38 +60,54 @@
             font-size: 1.2em;
             color: #ffcc00;
         }
-    </style>
-    <script>
-        function updateBackground(isDanger) {
-            if (isDanger) {
-                document.body.style.backgroundImage = "url('/static/risk.jpeg')"; // For Danger
-            } else {
-                document.body.style.backgroundImage = "url('/static/no_risk.jpg')"; // For Safe
-            }
+        .footer {
+            text-align: center;
+            padding: 10px;
+            background-color: #333; /* Solid background color for footer */
+            margin-top: 20px;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            color: #fff;
         }
-    </script>
+        .footer p {
+            font-size: 0.9em;
+            margin: 0;
+            padding: 10px;
+        }
+        .footer a {
+            color: #ffcc00;
+            font-weight: bold;
+            text-decoration: none;
+        }
+        .footer a:hover {
+            text-decoration: underline;
+        }
+        .footer .emoji {
+            font-size: 1.2em;
+        }
+    </style>
 </head>
 <body>
     <div class="container">
         <h1>Forest Fire Prediction</h1>
         <form action="{{ url_for('predict') }}" method="post">
-            <input type="number" name="feature1" placeholder="Enter Temperature" required>
-            <input type="number" name="feature2" placeholder="Enter Oxygen Level" required>
-            <input type="number" name="feature3" placeholder="Enter Humidity Level" required>
+            <input type="number" name="feature1" placeholder="Enter Temperature (°C)" required>
+            <input type="number" name="feature2" placeholder="Enter Oxygen Level (%)" required>
+            <input type="number" name="feature3" placeholder="Enter Humidity Level (%)" required>
             <input type="submit" value="Predict">
         </form>
 
         {% if pred %}
         <div class="output">
             <h2>{{ pred }}</h2>
-            <p>{{ bhai if bhai else '' }}</p>
+            <p>Confidence Level: <strong>{{ confidence }}%</strong></p>
         </div>
-
-        <!-- Pass the danger status to the JavaScript function -->
-        <script>
-            updateBackground({{ danger | tojson }});
-        </script>
         {% endif %}
+    </div>
+
+    <div class="footer">
+        <p>Developed by <a href="https://www.linkedin.com/in/atharva-soundankar/" target="_blank">Atharva Soundankar 🚀</a> &copy; 2025. All rights reserved. <span class="emoji">🔥🌲</span></p>
     </div>
 </body>
 </html>
