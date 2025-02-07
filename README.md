@@ -13,7 +13,7 @@ A beginner-friendly **Machine Learning** project that predicts the risk of fores
 
 ### 1️⃣ Clone the Repository
 ```sh
-git clone https://github.com/yourusername/forest-fire-risk-prediction.git
+git clone https://github.com/mercydeez/forest-fire-risk-prediction.git
 cd forest-fire-risk-prediction
 ```
 
