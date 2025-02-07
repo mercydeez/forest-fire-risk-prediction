@@ -2,6 +2,8 @@ import streamlit as st
 import pickle
 import numpy as np
 import pandas as pd
+import matplotlib
+matplotlib.use("Agg")  # Use a backend suitable for Streamlit
 import matplotlib.pyplot as plt
 import seaborn as sns
 import time
