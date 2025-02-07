@@ -54,17 +54,15 @@ streamlit run app.py
   - Altitude (meters)
 - **Training Data**: Simulated sample dataset (can be extended for better accuracy)
 
-## 📉 Data Visualizations
-The app includes two key visualizations to help understand the relationship between environmental factors and fire risk:
-- **Correlation Heatmap**: Displays how different environmental factors correlate with fire risk, highlighting key influencers like temperature and wind speed.
-- **Feature Distributions**: Shows histograms for temperature, oxygen level, humidity, and wind speed, helping to analyze their distribution and impact on fire risk.
-
 ## 🌍 Deployment
 To deploy on **Streamlit Cloud**, **Render**, or **Heroku**:
 1. Push your code to GitHub.
 2. Connect your repo to the chosen platform.
 3. Ensure `requirements.txt` is set up correctly.
 4. Deploy and share your app!
+
+### 🌐 Live Demo
+Check out the deployed app here: [Forest Fire Risk Prediction](https://forest-fire-risk-prediction-d9vmff5zuuvjvgoyjqjvpr.streamlit.app/#c322ce6a)
 
 ## 🤝 Contributing
 Feel free to fork this repo and submit PRs. Contributions are welcome! 😊
